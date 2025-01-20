@@ -193,7 +193,7 @@ scheduler_events = {
         "*/45 * * * *": [
             "burundi_compliance.burundi_compliance.utils.schedular.check_and_send_submitted_invoice_which_were_cancelled"
         ],
-        "*0 * * * *": [
+        "0 * * * *": [
             "burundi_compliance.burundi_compliance.utils.schedular.check_and_send_pending_cancelled_sales_invoices"
         ],
     },
