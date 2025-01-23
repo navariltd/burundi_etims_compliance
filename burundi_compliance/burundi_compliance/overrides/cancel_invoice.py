@@ -12,12 +12,20 @@ from burundi_compliance.burundi_compliance.utils.background_jobs import (
 )
 from burundi_compliance.burundi_compliance.utils.get_stock_items import get_items
 
+import datetime
+
 base = OBRAPIBase()
 auth_details = base.get_auth_details()
 
 
 def cancel_invoice(doc, method=None):
-    if doc.posting_date < auth_details.get("start_date"):
+    posting_date = ""
+    if isinstance(doc.posting_date, str):
+        posting_date = datetime.datetime.strptime(doc.posting_date, "%Y-%m-%d").date()
+    else:
+        posting_date = doc.posting_date
+
+    if posting_date < auth_details.get("start_date"):
         return
 
     invoice_data = get_invoice_data(doc)
