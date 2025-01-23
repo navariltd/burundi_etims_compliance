@@ -11,6 +11,7 @@
   "column_break_xbtx",
   "username",
   "password",
+  "start_date",
   "column_break_kuje",
   "company",
   "sandbox",
@@ -263,11 +264,17 @@
    "fieldname": "tin",
    "fieldtype": "Data",
    "label": "TIN"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-09 11:08:25.179604",
+ "modified": "2025-01-23 07:54:53.089237",
  "modified_by": "Administrator",
  "module": "Burundi Compliance",
  "name": "eBMS Settings",
